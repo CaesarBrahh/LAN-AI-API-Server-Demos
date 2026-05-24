@@ -1,10 +1,15 @@
 import requests
 
-response = requests.get(
-    "http://192.168.0.201:11434",
+response = requests.post(
+    "http://192.168.0.201:11434/api/generate",
+    json={
+        "model": "tinyllama",
+        "prompt": "Explain APIs simply.",
+        "stream": False
+    }
 )
 
-print(f"response: {response}")
-print(f"status code: {response.status_code}")
-print(f"text: {response.text}")
-print(f"headers: {response.headers}")
+data = response.json()
+
+for item in data.keys():
+    print(f"{item}: {data[item]}")
