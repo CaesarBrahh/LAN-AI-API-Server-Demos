@@ -9,12 +9,16 @@ def main():
     if OLLAMA_URL == None:
         raise Exception("Couldn't obtain server url")
 
+    # collect prompt
+    prompt = input("Prompt: ")
+
     # generate response
     response = requests.post(
         f"{OLLAMA_URL}/api/generate",
         json={
             "model": "tinyllama",
-            "prompt": "Give me a step-by-step guide to getting a girlfriend (1 paragraph or less)",
+            "system": "Answer in one sentence.",
+            "prompt": prompt,
             "stream": False
         }
     )
