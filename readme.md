@@ -2,6 +2,8 @@
 
 Essentially, I built a local LAN-accessible AI inference server on a Raspberry PI, hosting tinyllama, and explored interacting with it programmatically.
 
+![chat.py demo](media/chatdemo.gif)
+
 ## Tech Stack
 * Python
     * Requests
@@ -15,7 +17,8 @@ Essentially, I built a local LAN-accessible AI inference server on a Raspberry P
 ├── chat.py             # streaming chat interface with memory
 ├── calculator.py       # experimental AI calculator demo
 ├── .env                # local Ollama server URL
-└── readme.md
+├── readme.md
+└── media/
 ```
 Note: Each demo stands on its own and do not interact with each other.
 
