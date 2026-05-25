@@ -21,8 +21,9 @@ def main():
             "prompt": equation,
             "stream": False,
             "options": {
-                "temperature": 2,
-                "top_k": 40,
+                "temperature": 0,
+                "top_k": 1,
+                "num_predict": 3,
             }
         }
     )

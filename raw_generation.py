@@ -17,7 +17,6 @@ def main():
         f"{OLLAMA_URL}/api/generate",
         json={
             "model": "tinyllama",
-            "system": "Answer in one sentence.",
             "prompt": prompt,
             "stream": False
         }
