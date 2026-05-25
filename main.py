@@ -1,15 +1,27 @@
+import os
 import requests
+from dotenv import load_dotenv
 
-response = requests.post(
-    "http://192.168.0.201:11434/api/generate",
-    json={
-        "model": "tinyllama",
-        "prompt": "Explain APIs simply.",
-        "stream": False
-    }
-)
+def main():
+    # cop url
+    load_dotenv()
+    OLLAMA_URL = os.environ.get("OLLAMA_URL")
+    if OLLAMA_URL == None:
+        raise Exception("Couldn't obtain server url")
 
-data = response.json()
+    # generate response
+    response = requests.post(
+        f"{OLLAMA_URL}/api/generate",
+        json={
+            "model": "tinyllama",
+            "prompt": "Give me a step-by-step guide to getting a girlfriend (1 paragraph or less)",
+            "stream": False
+        }
+    )
 
-for item in data.keys():
-    print(f"{item}: {data[item]}")
+    # output
+    data = response.json()
+    print(f"Response:\n{data['response']}")
+
+if __name__ == "__main__":
+    main()
