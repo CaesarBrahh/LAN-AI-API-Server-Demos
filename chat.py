@@ -43,7 +43,8 @@ def main():
         # initialize the final assistant message
         assistant_response = ""
 
-        # print the assistant label
+        # print space and the assistant label
+        print()
         print("Assistant: ", end="", flush=True)
 
         # iterate through streamlined chunks
@@ -66,7 +67,8 @@ def main():
             # print token live
             print(content, end="", flush=True)
 
-        # finish with a newline
+        # finish with 2 new lines
+        print()
         print()
 
         # append assistant response to messages array
