@@ -2,7 +2,7 @@
 
 Essentially, I built a local LAN-accessible AI inference server on a Raspberry PI, hosting tinyllama, and explored interacting with it programmatically.
 
-![chat.py demo](media/chatdemo.gif)
+![chat.py demo](media/chatdemo2.gif)
 
 ## Tech Stack
 * Python
