@@ -17,9 +17,13 @@ def main():
         f"{OLLAMA_URL}/api/generate",
         json={
             "model": "tinyllama",
-            "system": "You are a calculator. You will be given an equation. Respond with ONLY the ANSWER. ONLY RETURN THE NUMBER!",
+            "system": "You are a calculator. Return only the final numeric answer. No words. No explanation. No labels. Only the answer of the expression!",
             "prompt": equation,
-            "stream": False
+            "stream": False,
+            "options": {
+                "temperature": 2,
+                "top_k": 40,
+            }
         }
     )
 
